@@ -40,23 +40,22 @@ namespace API.Data
         {
             
             db.Open();
-            string sql = "SELECT * FROM plants";//WHERE deleted = 'N'";
+            string sql = "SELECT * FROM plants WHERE deleted = 'N'";
             List<ExpandoObject> results = db.Select(sql);
 
             List<Plant> plants = new List<Plant>();
             foreach(dynamic item in results)
             {
                 Plant temp = new Plant(){
-                    PlantId = item.PlantId,
-                    PlantName = item.PlantName,
-                    PlantSpeciesName = item.PlantSpeciesName,
-                    PlantDifficultyLevel = item.PlantDifficultyLevel,
-                    PlantPic = item.PlantPic,
-                    PlantDescription = item.PlantDescription,
-                    PlantViews = item.PlantViews,
-                    CreatedByAccountID = item.CreatedByAccountID,
-
-
+                    PlantId = item.plantId,
+                    PlantName = item.plantName,
+                    PlantSpeciesName = item.plantSpeciesName,
+                    PlantDifficultyLevel = item.plantDifficultyLevel,
+                    PlantPic = item.plantPic,
+                    PlantDescription = item.plantDescription,
+                    PlantViews = item.plantViews,
+                    CreatedByAccountID = item.plantCreatedByAccountId,
+                    PlantType = item.plantType,
                 };
                 plants.Add(temp);
             }
@@ -84,7 +83,8 @@ namespace API.Data
                 {"@PlantPic", plants.PlantPic},
                 {"@PlantDescription", plants.PlantDescription},
                 {"@PlantViews",plants.PlantViews},
-                {"@CreatedByAccountID", plants.CreatedByAccountID}
+                {"@CreatedByAccountID", plants.CreatedByAccountID},
+                {"@PlantType", plants.PlantType}
 
             }; 
             return values;
