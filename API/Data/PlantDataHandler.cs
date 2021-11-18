@@ -40,7 +40,7 @@ namespace API.Data
         {
             
             db.Open();
-            string sql = "SELECT * FROM plants WHERE deleted = 'N'";
+            string sql = "SELECT * FROM plants";//WHERE deleted = 'N'";
             List<ExpandoObject> results = db.Select(sql);
 
             List<Plant> plants = new List<Plant>();

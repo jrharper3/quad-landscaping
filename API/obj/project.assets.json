@@ -6763,7 +6763,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
       "mysql >= 5.5.14.1",
-      "mysql.data >= *"
+      "mysql.data >= 8.0.27"
     ]
   },
   "packageFolders": {
@@ -6811,7 +6811,7 @@
           },
           "mysql.data": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[8.0.27, )"
           }
         },
         "imports": [
