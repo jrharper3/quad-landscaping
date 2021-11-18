@@ -9,7 +9,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 
 
-namespace api.Data
+namespace API.Data
 {
     public class Database
     {
