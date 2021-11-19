@@ -13,7 +13,13 @@ namespace API.Models
         public int PlantViews {get; set;}
         public int CreatedByAccountID {get; set;}
         public string PlantType {get; set;}
-        public string Deleted {get; set;}
+        
+        public IPlantDataHandler dataHandler{get; set;}
+
+        public Plant()
+        {
+            dataHandler = new PlantDataHandler();
+        }
         
 
     }

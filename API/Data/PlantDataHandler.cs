@@ -66,7 +66,7 @@ namespace API.Data
 
         public void Update(Plant plants)
         {
-           string sql = "UPDATE posts SET PlantName = @PlantName, PlantSpeciesName = @PlantSpeciesName, PlantDifficultyLevel = @PlantDifficultyLevel, PlantPic = @PlantPic, PlantDescription = @PlantDescription, PlantViews = @PlantViews, CreatedByAccountID = @CreatedByAccountID)";
+           string sql = "UPDATE posts SET PlantName = @PlantName, PlantSpeciesName = @PlantSpeciesName, PlantDifficultyLevel = @PlantDifficultyLevel, PlantPic = @PlantPic, PlantDescription = @PlantDescription, PlantViews = @PlantViews, CreatedByAccountID = @CreatedByAccountID, PlantType = @PlantType)";
 
             var values = GetValues(plants);
             db.Open();
