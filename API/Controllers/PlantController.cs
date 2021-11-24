@@ -26,8 +26,8 @@ namespace API.Controllers
 
         // GET: api/qlg/5
         [EnableCors("OpenPolicy")]
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpGet("{id}", Name = "GetB")]
+        public string GetB(int id)
         {
             return "value";
         }
