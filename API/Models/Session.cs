@@ -8,6 +8,7 @@ namespace API.Models
         public string SessionStartTime {get; set;}
         public int SessionAccountId {get; set;}
         public ISessions sessions{get; set;}
+        public string Date { get; internal set; }
 
         public Session()
         {

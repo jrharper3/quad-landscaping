@@ -35,22 +35,33 @@ namespace API.Controllers
         // POST: api/ForumPosts
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] ForumPost value)
         {
+            System.Console.WriteLine(value.PostId);
+            value.PostTimeStamp = DateTime.Now.ToString();
+            System.Console.WriteLine(value.PostTimeStamp);
+            System.Console.WriteLine(value.PostText);
+            System.Console.WriteLine(value.PostLikes);
+            System.Console.WriteLine(value.PostSubject);
+            System.Console.WriteLine(value.PostAccountId);
+            System.Console.WriteLine(value.PostViews);
+
         }
 
         // PUT: api/ForumPosts/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] ForumPost value)
         {
+            value.postsDataHandler.Update(value);
         }
 
         // DELETE: api/ApiWithActions/5
         [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(ForumPost value)
         {
+            value.postsDataHandler.Delete(value);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace API.Data
         }
         public void Delete(Plant plants)
         {
-            string sql = "UPDATE posts SET deleted = 'Y' WHERE plantid = @plantid";
+            string sql = "UPDATE plants SET deleted = 'Y' WHERE plantid = @plantid";
 
             var values = GetValues(plants);
             db.Open();
@@ -66,7 +66,7 @@ namespace API.Data
 
         public void Update(Plant plants)
         {
-           string sql = "UPDATE posts SET PlantName = @PlantName, PlantSpeciesName = @PlantSpeciesName, PlantDifficultyLevel = @PlantDifficultyLevel, PlantPic = @PlantPic, PlantDescription = @PlantDescription, PlantViews = @PlantViews, CreatedByAccountID = @CreatedByAccountID, PlantType = @PlantType)";
+           string sql = "UPDATE plants SET PlantName = @PlantName, PlantSpeciesName = @PlantSpeciesName, PlantDifficultyLevel = @PlantDifficultyLevel, PlantPic = @PlantPic, PlantDescription = @PlantDescription, PlantViews = @PlantViews, CreatedByAccountID = @CreatedByAccountID, PlantType = @PlantType)";
 
             var values = GetValues(plants);
             db.Open();

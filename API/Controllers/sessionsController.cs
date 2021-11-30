@@ -35,22 +35,28 @@ namespace API.Controllers
         // POST: api/sessions
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Session value)
         {
+            System.Console.WriteLine(value.SessionId);
+            value.SessionStartTime = DateTime.Now.ToString();
+            System.Console.WriteLine(value.SessionStartTime);
+            System.Console.WriteLine(value.SessionAccountId); 
         }
 
         // PUT: api/sessions/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Session value)
         {
+            value.sessions.Update(value);
         }
 
         // DELETE: api/ApiWithActions/5
         [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Session value)
         {
+            value.sessions.Delete(value);
         }
     }
 }

@@ -35,22 +35,32 @@ namespace API.Controllers
         // POST: api/plantcomments
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] PlantComments value)
         {
+            System.Console.WriteLine(value.PCommentId);
+            System.Console.WriteLine(value.PCommentText);
+            value.PCommentTimeStamp = DateTime.Now.ToString();
+            System.Console.WriteLine(value.PCommentTimeStamp);
+            System.Console.WriteLine(value.PCommentAccountId);
+            System.Console.WriteLine(value.PCommentLikes);
+            System.Console.WriteLine(value.PCommentPlantId);
+
         }
 
         // PUT: api/plantcomments/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] PlantComments value)
         {
+            value.CommentsDataHandler.Update(value);
         }
 
         // DELETE: api/ApiWithActions/5
         [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(PlantComments value)
         {
+            value.CommentsDataHandler.Delete(value);
         }
     }
 }

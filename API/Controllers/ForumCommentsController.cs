@@ -35,22 +35,31 @@ namespace API.Controllers
         // POST: api/ForumComments
         [EnableCors("OpenPolicy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] ForumComments value)
         {
+            System.Console.WriteLine(value.FcommentId);
+            System.Console.WriteLine(value.FcommentText);
+            value.FcommentTimeStamp = DateTime.Now.ToString();
+            System.Console.WriteLine(value.FcommentTimeStamp);
+            System.Console.WriteLine(value.FcommentAccountId);
+            System.Console.WriteLine(value.FcommentLikes);
+            System.Console.WriteLine(value.FcommentOriginalPostId);
         }
 
         // PUT: api/ForumComments/5
         [EnableCors("OpenPolicy")]
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] ForumComments value)
         {
+            value.forumComments.Update(value);
         }
 
         // DELETE: api/ApiWithActions/5
         [EnableCors("OpenPolicy")]
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(ForumComments value)
         {
+            value.forumComments.Delete(value);
         }
     }
 }
