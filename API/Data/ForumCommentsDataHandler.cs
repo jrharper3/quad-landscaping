@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(ForumComments forumComments)
         {
-            string sql = "INSERT INTO forumcomments ( fcommentId, fcommentText, fcommentTimeStamp, fcommentAccountId, fcommentLikes, fcommentOriginalPostId)";
-            sql += "VALUES (@fcommentId, @fcommentText, @fcommentTimeStamp, @fcommentAccountId, @fcommentLikes, @fcommentOriginalPostId)";
+            string sql = "INSERT INTO forumcomments (fcommentText, fcommentTimeStamp, fcommentAccountId, fcommentLikes, fcommentOriginalPostId)";
+            sql += "VALUES (@fcommentText, @fcommentTimeStamp, @fcommentAccountId, @fcommentLikes, @fcommentOriginalPostId)";
 
             var values = GetValues(forumComments);
             db.Open();
@@ -63,7 +63,7 @@ namespace API.Data
 
         public void Update(ForumComments forumComments)
         {
-           string sql = "UPDATE forumComments SET fcommentId = @fcommentId, fcommentText = @fcommentText, fcommentTimeStamp = @fcommentTimeStamp, fcommentAccountId = @fcommentAccountId, fcommentLikes = @fcommentLikes, fcommentOriginalPostId = @fcommentOriginalPostId)";
+           string sql = "UPDATE forumComments SET fcommentText = @fcommentText, fcommentTimeStamp = @fcommentTimeStamp, fcommentAccountId = @fcommentAccountId, fcommentLikes = @fcommentLikes, fcommentOriginalPostId = @fcommentOriginalPostId)";
 
             var values = GetValues(forumComments);
             db.Open();

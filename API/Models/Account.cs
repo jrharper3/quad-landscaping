@@ -4,8 +4,6 @@ namespace API.Models
 {
     public class Account
     {
-        internal object accountDataHandler;
-
         public int AccountId {get; set;}
         public string AccountUsername {get; set;}
         public string AccountFName {get; set;}
