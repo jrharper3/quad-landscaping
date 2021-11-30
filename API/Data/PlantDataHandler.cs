@@ -16,7 +16,7 @@ namespace API.Data
         }
         public void Delete(Plant plants)
         {
-            string sql = "UPDATE plants SET deleted = 'Y' WHERE plantid = @plantid";
+            string sql = "UPDATE plants SET deleted = 'Y' WHERE Plantid = @plantid";
 
             var values = GetValues(plants);
             db.Open();
@@ -27,7 +27,7 @@ namespace API.Data
         public void Insert(Plant plants)
         {
             string sql = "INSERT INTO plants (PlantName, PlantSpeciesName, PlantDifficultyLevel, PlantPic, PlantDescription, PlantViews, CreatedByAccountID)";
-            sql += "VALUES (@PlantName, @PlantSpeciesName, @PlantDifficultyLevel, @PlantPic, @PlantDescription, @PlantViews, @CreatedByAccountID)";
+            sql += "VALUES (@plantname, @plantSpeciesname, @plantDifficultyLevel, @plantpic, @plantdescription, @plantviews, @createdbyaccountiD)";
 
             var values = GetValues(plants);
             db.Open();
@@ -66,7 +66,7 @@ namespace API.Data
 
         public void Update(Plant plants)
         {
-           string sql = "UPDATE plants SET PlantName = @PlantName, PlantSpeciesName = @PlantSpeciesName, PlantDifficultyLevel = @PlantDifficultyLevel, PlantPic = @PlantPic, PlantDescription = @PlantDescription, PlantViews = @PlantViews, CreatedByAccountID = @CreatedByAccountID, PlantType = @PlantType)";
+           string sql = "UPDATE plants SET PlantName = @plantname, PlantSpeciesName = @plantspeciesname, PlantDifficultyLevel = @plantdifficultylevel, PlantPic = @plantpic, PlantDescription = @plantdescription, PlantViews = @plantviews, CreatedByAccountID = @createdbyaccountid, PlantType = @planttype WHERE PlantId = @plantid)";
 
             var values = GetValues(plants);
             db.Open();
@@ -77,14 +77,14 @@ namespace API.Data
         {
             var values = new Dictionary<string,object>(){
                 {"@plantid", plants.PlantId},
-                {"@PlantName", plants.PlantName},
-                {"@PlantSpeciesName", plants.PlantSpeciesName},
-                {"@PlantDifficultyLevel",plants.PlantDifficultyLevel},
-                {"@PlantPic", plants.PlantPic},
-                {"@PlantDescription", plants.PlantDescription},
-                {"@PlantViews",plants.PlantViews},
-                {"@CreatedByAccountID", plants.CreatedByAccountID},
-                {"@PlantType", plants.PlantType}
+                {"@plantname", plants.PlantName},
+                {"@plantspeciesname", plants.PlantSpeciesName},
+                {"@plantdifficultylevel",plants.PlantDifficultyLevel},
+                {"@plantpic", plants.PlantPic},
+                {"@plantdescription", plants.PlantDescription},
+                {"@plantviews",plants.PlantViews},
+                {"@createdbyaccountid", plants.CreatedByAccountID},
+                {"@planttype", plants.PlantType}
 
             }; 
             return values;

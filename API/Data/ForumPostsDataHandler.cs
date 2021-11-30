@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(ForumPost forumPost)
         {
-            string sql = "INSERT INTO forumposts ( postId, postTimeStamp, postText, postLikes, postSubject, postAccountId, postViews)";
-            sql += "VALUES (@postId, @postTimeStamp, @postText, @postLikes, @postSubject, @postAccountId, @postViews)";
+            string sql = "INSERT INTO forumposts (postTimeStamp, postText, postLikes, postSubject, postAccountId, postViews)";
+            sql += "VALUES (@postTimeStamp, @postText, @postLikes, @postSubject, @postAccountId, @postViews)";
 
             var values = GetValues(forumPost);
             db.Open();
@@ -64,7 +64,7 @@ namespace API.Data
 
         public void Update(ForumPost forumPosts)
         {
-           string sql = "UPDATE forumposts SET postId = @postId, postTimeStamp = @postTimeStamp, postText = @postText, postLikes = @postLikes, postSubject = @postSubject, postAccountId = @postAccountId, postViews = @postViews)";
+           string sql = "UPDATE forumposts SET postTimeStamp = @postTimeStamp, postText = @postText, postLikes = @postLikes, postSubject = @postSubject, postAccountId = @postAccountId, postViews = @postViews WHERE postid = @postid";
 
             var values = GetValues(forumPosts);
             db.Open();

@@ -46,6 +46,8 @@ namespace API.Controllers
             System.Console.WriteLine(value.AccountBio);
             System.Console.WriteLine(value.AccountProfilePic);
             System.Console.WriteLine(value.AccountCreatedSessionId);
+             IAccountDataHandler accountDataHandler = new AccountDataHandler();
+             accountDataHandler.Insert(value);
         }
 
         // PUT: api/Accounts/5

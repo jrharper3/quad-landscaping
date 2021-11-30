@@ -16,7 +16,7 @@ namespace API.Data
         }
         public void Delete(Session session)
         {
-            string sql = "UPDATE sessions SET deleted = 'Y' WHERE sessionId = @sessionId";
+            string sql = "UPDATE sessions SET deleted = 'Y' WHERE SessionId = @sessionId";
 
             var values = GetValues(session);
             db.Open();
@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(Session session)
         {
-            string sql = "INSERT INTO sessions (sessionId, sessionStartTime, sessionAccountId)";
-            sql += "VALUES (@sessionId, @sessionStartTime, @sessionAccountId)";
+            string sql = "INSERT INTO sessions (SessionStartTime, SessionAccountId)";
+            sql += "VALUES (@sessionStartTime, @sessionAccountId)";
 
             var values = GetValues(session);
             db.Open();
@@ -60,7 +60,7 @@ namespace API.Data
 
         public void Update(Session session)
         {
-           string sql = "UPDATE sessions SET sessionId = @sessionId, sessionStartTime = @sessionStartTime, sessionAccountId = @sessionAccountId)";
+           string sql = "UPDATE sessions SET SessionStartTime = @sessionStartTime, SessionAccountId = @sessionAccountId WHERE SessionId = @sessionId";
 
             var values = GetValues(session);
             db.Open();

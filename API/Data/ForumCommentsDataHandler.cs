@@ -63,7 +63,7 @@ namespace API.Data
 
         public void Update(ForumComments forumComments)
         {
-           string sql = "UPDATE forumComments SET fcommentText = @fcommentText, fcommentTimeStamp = @fcommentTimeStamp, fcommentAccountId = @fcommentAccountId, fcommentLikes = @fcommentLikes, fcommentOriginalPostId = @fcommentOriginalPostId)";
+           string sql = "UPDATE forumComments SET fcommentText = @fcommentText, fcommentTimeStamp = @fcommentTimeStamp, fcommentAccountId = @fcommentAccountId, fcommentLikes = @fcommentLikes, fcommentOriginalPostId = @fcommentOriginalPostId WHERE fcommentid = @fcommentid";
 
             var values = GetValues(forumComments);
             db.Open();

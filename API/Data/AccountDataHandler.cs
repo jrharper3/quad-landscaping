@@ -26,8 +26,7 @@ namespace API.Data
 
         public void Insert(Account accounts)
         {
-            string sql = "INSERT INTO accounts (AccountId, AccountUsername, AccountFName, AccountLName, AccountPassword, AccountAdminStatus, AccountBio, AccountProfilePic, AccountCreatedSessionId)";
-            sql += "VALUES (@accountId, @accountUsername, @accountFName, @accountLName, @accountPassword, @accountAdminStatus, @accountBio, @accountProfilePic, @accountCreatedSessionId )";
+            string sql = "INSERT INTO accounts (AccountUsername, AccountFName, AccountLName, AccountPassword, AccountAdminStatus, AccountBio, AccountProfilePic, AccountCreatedSessionId) VALUES (@accountusername, @accountfname, @accountlname, @accountpassword, @accountadminstatus, @accountbio, @accountprofilepic, @accountcreatedsessionid)";
 
             var values = GetValues(accounts);
             db.Open();
@@ -67,7 +66,7 @@ namespace API.Data
 
         public void Update(Account accounts)
         {
-           string sql = "UPDATE accounts SET AccountUsername = @accountUsername, AccountFName = @accountFName, AccountLName = @accountLName, AccountPassword = @accountPassword, AccountAdminStatus = @accountAdminStatus, AccountBio = @accountBio, AccountProfilePic = @accountProfilePic, AccountCreatedSessionId = @accountCreatedSessionId)";
+           string sql = "UPDATE accounts SET AccountUsername = @accountusername, AccountFName = @accountfname, AccountLName = @accountlname, AccountPassword = @accountpassword, AccountAdminStatus = @accountadminStatus, AccountBio = @accountBio, AccountProfilePic = @accountProfilePic, AccountCreatedSessionId = @accountcreatedsessionid WHERE Accountid = @accountid";
 
             var values = GetValues(accounts);
             db.Open();

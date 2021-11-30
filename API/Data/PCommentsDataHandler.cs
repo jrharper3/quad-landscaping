@@ -16,7 +16,7 @@ namespace API.Data
         }
         public void Delete(PlantComments pComments)
         {
-            string sql = "UPDATE plantcomments SET deleted = 'Y' WHERE plantid = @pcommentid";
+            string sql = "UPDATE plantcomments SET deleted = 'Y' WHERE PCommentId = @pcommentid";
 
             var values = GetValues(pComments);
             db.Open();
@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(PlantComments pComments)
         {
-            string sql = "INSERT INTO plantcomments (PCommentId, PCommentText, PCommentTimeStamp, PCommentAccountId, PCommentLikes, PCommmentPlantId)";
-            sql += "VALUES (@PCommentID, @PCommentText, @PCommentTimeStamp, @PCommentAccountId, @PCommentLikes, @PCommmentPlantId)";
+            string sql = "INSERT INTO plantcomments (PCommentText, PCommentTimeStamp, PCommentAccountId, PCommentLikes, PCommmentPlantId)";
+            sql += "VALUES (@PCommentText, @PCommentTimeStamp, @PCommentAccountId, @PCommentLikes, @PCommmentPlantId)";
 
             var values = GetValues(pComments);
             db.Open();
@@ -63,7 +63,7 @@ namespace API.Data
 
         public void Update(PlantComments pComments)
         {
-           string sql = "UPDATE plantcomments SET PCommentID = @PCommentID, PCommentText = @PCommentText, PCommentTimeStamp = @PCommentTimeStamp, PCommentAccountId = @PCommentAccountId, PCommentLikes = @PCommentLikes, PCommmentPlantId = @PCommmentPlantId)";
+           string sql = "UPDATE plantcomments SET  PCommentText = @PCommentText, PCommentTimeStamp = @PCommentTimeStamp, PCommentAccountId = @PCommentAccountId, PCommentLikes = @PCommentLikes, PCommmentPlantId = @PCommmentPlantId  WHERE PCommentId = @pcommentid)";
 
             var values = GetValues(pComments);
             db.Open();
