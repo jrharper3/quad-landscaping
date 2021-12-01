@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-2/API/API.csproj": {}
+    "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-3/API/API.csproj": {}
   },
   "projects": {
-    "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-2/API/API.csproj": {
+    "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-3/API/API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-2/API/API.csproj",
+        "projectUniqueName": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-3/API/API.csproj",
         "projectName": "API",
-        "projectPath": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-2/API/API.csproj",
+        "projectPath": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-3/API/API.csproj",
         "packagesPath": "/Users/irenebindangabesoangue/.nuget/packages/",
-        "outputPath": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-2/API/obj/",
+        "outputPath": "/Users/irenebindangabesoangue/Documents/MIS321/quad-landscaping-3/API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/irenebindangabesoangue/.nuget/NuGet/NuGet.Config"

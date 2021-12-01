@@ -43,7 +43,7 @@ namespace API.Controllers
             System.Console.WriteLine(value.PlantPic);
             System.Console.WriteLine(value.PlantDescription);
             System.Console.WriteLine(value.PlantViews);
-            System.Console.WriteLine(value.CreatedByAccountID);
+            System.Console.WriteLine(value.PlantCreatedByAccountID);
             System.Console.WriteLine(value.PlantType);
             value.dataHandler.Insert(value);
         }

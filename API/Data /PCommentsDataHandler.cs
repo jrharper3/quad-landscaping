@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(PlantComments pComments)
         {
-            string sql = "INSERT INTO plantcomments (PCommentText, PCommentTimeStamp, PCommentAccountId, PCommentLikes, PCommmentPlantId)";
-            sql += "VALUES (@PCommentText, @PCommentTimeStamp, @PCommentAccountId, @PCommentLikes, @PCommmentPlantId)";
+            string sql = "INSERT INTO plantcomments (PCommentText, PCommentTimeStamp, PCommentAccountId, PCommentLikes, PCommentPlantId)";
+            sql += "VALUES (@PCommentText, @PCommentTimeStamp, @PCommentAccountId, @PCommentLikes, @pcommentplantid)";
 
             var values = GetValues(pComments);
             db.Open();
@@ -63,7 +63,7 @@ namespace API.Data
 
         public void Update(PlantComments pComments)
         {
-           string sql = "UPDATE plantcomments SET  PCommentText = @PCommentText, PCommentTimeStamp = @PCommentTimeStamp, PCommentAccountId = @PCommentAccountId, PCommentLikes = @PCommentLikes, PCommmentPlantId = @PCommmentPlantId  WHERE PCommentId = @pcommentid)";
+           string sql = "UPDATE plantcomments SET  PCommentText = @PCommentText, PCommentTimeStamp = @PCommentTimeStamp, PCommentAccountId = @PCommentAccountId, PCommentLikes = @PCommentLikes, PCommentPlantId = @PCommentPlantId  WHERE PCommentId = @pcommentid";
 
             var values = GetValues(pComments);
             db.Open();

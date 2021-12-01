@@ -26,8 +26,8 @@ namespace API.Data
 
         public void Insert(Plant plants)
         {
-            string sql = "INSERT INTO plants (PlantName, PlantSpeciesName, PlantDifficultyLevel, PlantPic, PlantDescription, PlantViews, CreatedByAccountID)";
-            sql += "VALUES (@plantname, @plantSpeciesname, @plantDifficultyLevel, @plantpic, @plantdescription, @plantviews, @createdbyaccountiD)";
+            string sql = "INSERT INTO plants (PlantName, PlantSpeciesName, PlantDifficultyLevel, PlantPic, PlantDescription, PlantViews, PlantCreatedByAccountID)";
+            sql += "VALUES (@plantname, @plantSpeciesname, @plantDifficultyLevel, @plantpic, @plantdescription, @plantviews, @plantcreatedbyaccountid)";
 
             var values = GetValues(plants);
             db.Open();
@@ -54,7 +54,7 @@ namespace API.Data
                     PlantPic = item.plantPic,
                     PlantDescription = item.plantDescription,
                     PlantViews = item.plantViews,
-                    CreatedByAccountID = item.plantCreatedByAccountId,
+                    PlantCreatedByAccountID = item.plantCreatedByAccountId,
                     PlantType = item.plantType,
                 };
                 plants.Add(temp);
@@ -66,7 +66,7 @@ namespace API.Data
 
         public void Update(Plant plants)
         {
-           string sql = "UPDATE plants SET PlantName = @plantname, PlantSpeciesName = @plantspeciesname, PlantDifficultyLevel = @plantdifficultylevel, PlantPic = @plantpic, PlantDescription = @plantdescription, PlantViews = @plantviews, CreatedByAccountID = @createdbyaccountid, PlantType = @planttype WHERE PlantId = @plantid)";
+           string sql = "UPDATE plants SET PlantName = @plantname, PlantSpeciesName = @plantspeciesname, PlantDifficultyLevel = @plantdifficultylevel, PlantPic = @plantpic, PlantDescription = @plantdescription, PlantViews = @plantviews, PlantCreatedByAccountID = @plantcreatedbyaccountid, PlantType = @planttype WHERE PlantId = @plantid";
 
             var values = GetValues(plants);
             db.Open();
@@ -83,7 +83,7 @@ namespace API.Data
                 {"@plantpic", plants.PlantPic},
                 {"@plantdescription", plants.PlantDescription},
                 {"@plantviews",plants.PlantViews},
-                {"@createdbyaccountid", plants.CreatedByAccountID},
+                {"@plantcreatedbyaccountid", plants.PlantCreatedByAccountID},
                 {"@planttype", plants.PlantType}
 
             }; 

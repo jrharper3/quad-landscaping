@@ -11,7 +11,7 @@ namespace API.Models
         public string PlantPic {get; set;}
         public string PlantDescription {get; set;}
         public int PlantViews {get; set;}
-        public int CreatedByAccountID {get; set;}
+        public int PlantCreatedByAccountID {get; set;}
         public string PlantType {get; set;}
         
         public IPlantDataHandler dataHandler{get; set;}
